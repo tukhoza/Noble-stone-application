@@ -1,0 +1,60 @@
+<div>
+    <div class="text-lg text-[#464d77ff] font-semibold sm:text-2xl py-2">
+        Website Design Prices & Packages
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div class="max-w p-6 bg-gradient-to-br from-[#464d77ff] to-[#36827f87] border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <svg class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"/>
+            </svg>
+            <a href="#">
+                <h5 class="mb-2 text-lg font-semibold tracking-tight text-white dark:text-white">OUR WEBSITE BUILDS INCLUDE THE FOLLOWING FOR FREE</h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-200 dark:text-gray-400">
+                2 X Custom Designs To Choose From (We Do Not Use Templates) <br>
+                2 X Free Design Revision Rounds <br>
+                2 X Free Content Revision Rounds <br>
+                100% Mobile Friendly & Responsiveness Ready Layout <br>
+                Free SEO & Google Index <br>
+                Project Manager Assigned To Your Project To Guide You <br>
+                Professional & Certified Team Working On Your Designs And Coding <br>
+                Experts Working On Your Project With 19 Years Design And Coding Experience <br>
+                Quality Control Throughout The Process
+            </p>
+            <div class="text-md font-medium text-[#464d77ff]">Custom build your own quote here</div>
+        </div>
+
+        <div class="py-4 sm:block hidden rounded-md bg-gray-900 hover:rotate-1">
+            <img class="h-auto sm:h-auto w-auto" src="./../../../../assets/website-8496981.jpg" alt="">
+        </div>
+
+    </div>
+
+    <div class="text-lg text-gray-600 font-semibold sm:text-2xl py-10">
+        Website Design Prices & Packages
+        <p class="text-sm font-normal">For more website options, go to our Custom Website Quotation Builder</p>
+    </div>
+
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div *ngFor="let item of websiteItems;  index as i ">
+            <div *ngIf="item.itemSubCategory == 'Website Design Prices & Packages'" class="max-w-sm p-6 bg-[#464d77ff] border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <svg class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z"/>
+                </svg>
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-300 dark:text-white">{{ item.itemName }}</h5>
+                </a>
+                <p *ngFor="let itemList of item.itemList; index as j" class="mb-3 font-normal text-white dark:text-gray-400">
+                        {{ itemList }} <br>
+                </p>
+                <p class="font-semibold text-gray-300">STARTING FROM: </p>
+                <div class="text-md font-medium">R {{ item.itemPrice }}.00</div>
+                <button (click)="dataStorageService1.addQuoteRequest(item)" class=" bg-[#368280]   hover:bg-[#1c555387] mt-4 text-white rounded-md px-3 py-2">Request Quote</button>
+            </div>
+        </div>
+    </div>
+            
+       
+</div>

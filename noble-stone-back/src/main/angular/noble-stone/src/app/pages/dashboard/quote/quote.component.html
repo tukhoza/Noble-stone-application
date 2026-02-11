@@ -1,0 +1,86 @@
+<div class="flex justify-between py-2">
+    <div ><p class="text-3xl">Quotes</p></div>
+</div>
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-50 uppercase bg-[#464d77ff] dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Surname
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Email
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Phone
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    <div class="flex items-center">
+                        Date
+                        <a >
+                            <svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                            </svg>
+                        </a>                        
+                    </div>
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    <span class="float-end">
+                        <svg class="w-6 h-6 text-gray-50 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H4m0 0v4m0-4 5 5m7-5h4m0 0v4m0-4-5 5M8 20H4m0 0v-4m0 4 5-5m7 5h4m0 0v-4m0 4-5-5"/>
+                          </svg>                                                   
+                    </span>
+                </th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let quote of QUOTECHECKOUT; index as i">
+            <tr  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{ quote.name }}
+                </th>
+                <td class="px-6 py-4">
+                    {{ quote.surname }}
+                </td>
+                <td class="px-6 py-4">
+                    {{ quote.email }}
+                </td>
+                <td class="px-6 py-4">
+                    {{ quote.phone }}
+                </td>
+                <td class="px-6 py-4">
+                    {{ quote.date  | date }}
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <button (click)="showHideRow('_'+i)"
+                        class="float-end">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                          </svg>                          
+                    </button>
+                </td>
+            </tr>
+            <tr [id]="'#_'+i" style="display: none;" class="bg-white border border-b-[#464d77ff]  border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <td colspan=6  class="px-4 py-2">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 py-5">
+                        <div class="max-w-full bg-white block p-6  border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+                            <p class="text-lg font-bold text-[#464d77ff]">Message</p>
+                            <p class="py-3">{{ quote.message }}</p>
+                          </div>
+                        <div  class="grid gap-4 grid-cols-3 sm:grid-cols-3 ">
+                            <div *ngFor="let item of quote.items" class="bg-[#36827f87] block max-w-full p-6  border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+                                <p class="text-2xl text-gray-500"> {{ item.itemCategory }}</p>
+                                <p class="text-lg text-gray-600"> {{ item.itemName }}</p>
+                                <p class="text-md text-gray-900"> R{{ item.itemPrice }}.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div (click)="onDone(quote)" class="float-end bg-[#464d77ff] hover:bg-[#27368d] mt-4 text-white rounded-md px-3 py-2 cursor-pointer" type="button">button</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

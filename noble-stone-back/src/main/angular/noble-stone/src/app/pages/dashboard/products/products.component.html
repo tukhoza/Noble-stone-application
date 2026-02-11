@@ -1,0 +1,18 @@
+<div class="w-full pt-4">
+    <div class="flex justify-between py-2 p-4 rounded-lg bg-gray-50 mb-4">
+        <div ><p class="text-2xl">Products Alter Page</p></div>
+        <div ><button (click)="openDialog()" class="bg-[#368280]   hover:bg-[#1c555387] mt-4 text-white rounded-md px-3 py-2">Add</button></div>
+    </div>
+
+    <div  class="grid gap-4 grid-cols-1 sm:grid-cols-3 ">
+        <div *ngFor="let item of allItems" class="bg-[#36827f87] block max-w-full p-6  border border-gray-200 rounded-lg shadow ">
+            <p class="text-2xl font-bold text-[#464d77ff]"> {{ item.itemCategory }}</p>
+            <p class="text-lg text-gray-600"> {{ item.itemName }}</p>
+            <p class="text-md text-gray-900"> R{{ item.itemPrice }}.00</p>
+            <div>
+                <a (click)="editProduct(item)" type="button" class="font-medium text-yellow-300 dark:text-blue-500 hover:underline px-1 cursor-pointer">Edit</a>
+                <a (click)="deleteProduct(item)" type="button" class="font-medium text-red-600 dark:text-blue-500 hover:underline px-1 cursor-pointer">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
