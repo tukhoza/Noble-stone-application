@@ -77,7 +77,7 @@ public class ItemController {
                     .build();
             itemService.saveItem(item);
         }
-        return new ResponseEntity<>("Sucessful", HttpStatus.CREATED);
+        return new ResponseEntity<>("Successful", HttpStatus.CREATED);
     }
 
     @PostMapping("/removeitem")

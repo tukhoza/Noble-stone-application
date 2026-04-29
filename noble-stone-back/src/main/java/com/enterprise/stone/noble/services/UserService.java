@@ -29,7 +29,6 @@ public class UserService {
 
     public AuthenticationResponse register(RegisterRequest register) {
         User user = User.builder()
-                .id(register.getId())
                 .name(register.getName())
                 .surname(register.getSurname())
                 .email(register.getEmail())

@@ -17,7 +17,7 @@ public class ItemResponse {
     private String itemName;
     private String itemCategory;
     private String itemSubCategory;
-    private String itemPrice;
+    private Double itemPrice;
     private String itemDescription;
     private List<String> itemList;
 }

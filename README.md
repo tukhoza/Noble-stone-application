@@ -3,10 +3,11 @@ Web application that provides business services such as photography, videography
 
 Technologies
 - Language: Java (backend), TypeScript (frontend)
-- Frameworks: Spring Boot (backend), Angular (frontend)
+- Frameworks: Spring Boot (backend), Angular (frontend), Stying (Tailwindcss)
 - Deployment: Angular application is embedded into the Spring Boot application (served as static assets)
 - Database: H2 (in-memory) for development
 
 Notes
 - The project uses Spring Boot to run the Java backend and serve the built Angular frontend.
 - H2 is configured for development; switch to a production-ready database
+

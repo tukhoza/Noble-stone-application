@@ -37,7 +37,7 @@ public class Item {
     @Column(name = "item_sub_category")
     private String itemSubCategory;
     @Column(name = "item_price")
-    private String itemPrice;
+    private Double itemPrice;
     @Column(name = "item_description")
     private String itemDescription;
     @ElementCollection

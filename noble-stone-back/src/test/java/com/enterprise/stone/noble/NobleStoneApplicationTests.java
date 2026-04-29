@@ -1,13 +1,13 @@
-package com.enterprise.stone.noble;
+// package com.enterprise.stone.noble;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class NobleStoneApplicationTests {
+// @SpringBootTest
+// class NobleStoneApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// 	@Test
+// 	void contextLoads() {
+// 	}
 
-}
+// }

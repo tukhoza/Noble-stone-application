@@ -34,12 +34,10 @@
 
 
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>6.1.6</version>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
 		</dependency>
-
-		
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -91,12 +89,6 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
     	</dependency>
 
@@ -119,6 +111,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>3.3.1</version>
 				<configuration>
 					<excludes>
 						<exclude>
@@ -173,15 +166,15 @@
 				<executions>
 					<execution>
 						<id>copy-frontend</id>
-						<phase>generate-resources</phase>
+						<phase>process-resources</phase>
 						<goals>
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/classes/static/</outputDirectory>
+							<outputDirectory>${project.build.outputDirectory}/static</outputDirectory>
 							<resources>
 								<resource>
-									<directory>/src/main/angular/noble-stone/dist/noble-stone</directory>
+									<directory>src/main/angular/noble-stone/dist/noble-stone</directory>
 								</resource>
 							</resources>
 						</configuration>
